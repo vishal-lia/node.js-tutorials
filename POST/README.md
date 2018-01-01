@@ -1,4 +1,4 @@
-# HTTP-POST
+# Handling POST request
 This tutorial is about how to make a HTTP POST request to validate a form using node.js
 
 Form will be valid if both Username and Password are "admin"
