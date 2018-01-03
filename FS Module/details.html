@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:3000/books',
+                    success: function(data) {
+                        var books = data;
+                        var table = document.createElement('TABLE');
+                        table.border = '1';
+
+                        books.forEach(function(book) {
+                            console.log(book.id);
+
+                            //Create an empty row <tr> element and add it to 1st position of table
+                            var row = table.insertRow(0);
+
+                            //Insert two cells <td> element add it to 1st, 2nd positions
+                            var cell1 = row.insertCell(0);
+                            var cell2 = row.insertCell(1);
+
+                            //Add text to cells
+                            cell1.innerHTML = "<div><a href='http://localhost:3000/books/view?ebook="+book.ebookname+"'><img src='"+book.imageUrl+"' alt=\"default\" height=\"20%\" width=\"20%\"/></a>" ;
+                            cell2.innerHTML = "<form><div>ISBNNO :"+book.isbnNo+" </div>"+
+                                              "<div>BookName :"+book.name+"</div>"+
+                                              "<div>Cost:"+book.price+"/-</div>"+
+                                              "<div><a href='http://localhost:3000/books/download?ebook="+book.ebookname+"'>Download the ebook</a></div></form>"; 
+
+                                                            
+                        });
+                        $('#result').append(table);
+                    },
+                    error: function(xhr, status, error) {
+                        console.log(error);
+                    }
+                });
+            });
+        </script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="style.css" type="text/css" rel="stylesheet">        
+    </head>
+    <body>
+        <div class="container">
+            <h1>Online Book Library</h1>
+            <h4>Welcome to Book Library</h4>
+            <table>
+                <tr>
+                    <td>
+                        <div id="result"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

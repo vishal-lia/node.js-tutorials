@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Node.js FS module</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+        function OnSubmitForm(value) {
+            if(value === "Login") {
+                document.myform.action = "http://localhost:3000/login";
+                document.myform.submit();
+            }
+            else if(value === "Signup") {
+                document.myform.action = "http://localhost:3000/signup";
+                document.myform.submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+        <h1>Online Book Library</h1>
+        <h4>Login to view book details</h4>
+        <form class="form-horizontal" name="myform" method="POST">
+            <div class="form-group">
+                <label class="control-label col-sm-2 col-sm-offset-2" for="username">Username:</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" name="username" placeholder="Enter Username" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2 col-sm-offset-2" for="password">Password:</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" name="password" placeholder="Enter Password" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-2">
+                    <input type="button" onclick="OnSubmitForm(this.value)" class="btn btn-primary" value="Login" />
+                </div>
+                <div class="col-sm-2">
+                    <input type="button" onclick="OnSubmitForm(this.value)" class="btn btn-success" value="Signup" />
+                </div>                
+            </div>        
+        </form>
+    </div>
+    </body>
+</body>
+</html>
