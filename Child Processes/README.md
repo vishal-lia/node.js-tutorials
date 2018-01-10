@@ -8,4 +8,4 @@ Use spawn when you want the child process to return huge binary data to Node, us
 The child_process.fork() method is a special case of child_process.spawn() used specifically to spawn new Node.js processes. Like child_process.spawn(), a ChildProcess object is returned. The returned ChildProcess will have an additional communication channel built-in that allows messages to be passed back and forth between the parent and child.
 
 ### Cluster.
-The cluster module uses to maximize the CPU usage was via forking processes so as to create programs that uses all the CPUs. 
+The cluster module can be used to maximize the CPU usage via forking processes so as to create programs that uses all the CPUs. 
