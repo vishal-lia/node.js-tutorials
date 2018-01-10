@@ -9,8 +9,9 @@ Node.js tutorials.
 1. GET request
 2. POST request
 3. Event Handling
-4. File system(FS) module 
+4. File system(FS) module
+5. Child processes 
 
 ### Testing functionality:
-1. Run the server - 'node httpServer.js'
+1. Run the server - 'node httpServer.js'.
 2. Open login.html/home.html page.
